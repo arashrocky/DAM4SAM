@@ -81,10 +81,12 @@ def run_sequence(dir_path, file_extension, output_dir):
 
 def main():
     parser = argparse.ArgumentParser(description='Run on a sequence of frames.')
-    parser.add_argument('--dir', type=str, required=True, help='Path to directory with frames.')
+    # parser.add_argument('--dir', type=str, required=True, help='Path to directory with frames.')
+    parser.add_argument('--dir', type=str, default= "/data/arash/Datasets/GHOSTFiles/datasets/MOT17-11frames/train/MOT17-10-FRCNN/img1", help='Path to directory with frames.')
     parser.add_argument('--ext', type=str, default='jpg', help='Image file extension.')
-    parser.add_argument('--output_dir', type=str, default=None, help='Path to the output directory.')
-    
+    # parser.add_argument('--output_dir', type=str, default=None, help='Path to the output directory.')
+    parser.add_argument('--output_dir', type=str, default="/data2/arash/Dataset/SPARE", help='Path to the output directory.')
+
     args = parser.parse_args()
 
     run_sequence(args.dir, args.ext, args.output_dir)

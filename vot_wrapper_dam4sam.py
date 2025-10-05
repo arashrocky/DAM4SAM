@@ -12,7 +12,10 @@ import random
 import os
 import yaml
 
-with open("./dam4sam_config.yaml") as f:
+script_dir = os.path.dirname(os.path.abspath(__file__))
+config_path = os.path.join(script_dir, "dam4sam_config.yaml")
+with open(config_path) as f:
+# with open("./dam4sam_config.yaml") as f:
     config = yaml.load(f, Loader=yaml.FullLoader)
 
 seed = config["seed"]
